@@ -1,0 +1,288 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Mosaddek">
+    <meta name="keyword" content=" Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+    <link rel="shortcut icon" href="~/OuterTools/movie_review/images/logo@2x.png">
+    <title>Advanced Table</title>
+    <!-- Bootstrap core CSS -->
+    <link href="~/OuterTools/movie_review/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/OuterTools/movie_review/css/bootstrap-reset.css" rel="stylesheet">
+    <!--external css-->
+    <link href="~/OuterTools/movie_review/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/OuterTools/movie_review/assets/advanced-datatable/media/css/demo_page.css" rel="stylesheet" />
+    <link href="~/OuterTools/movie_review/assets/advanced-datatable/media/css/demo_table.css" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="~/OuterTools/movie_review/stylealternative.css" rel="stylesheet">
+    <link href="~/OuterTools/movie_review/css/style-responsive.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="~/OuterTools/movie_review/assets/bootstrap-fileupload/bootstrap-fileupload.css" />
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <section id="container" class="">
+        <!--header start-->
+        <header class="header white-bg">
+            <div class="sidebar-toggle-box">
+                <div data-original-title="Toggle Navigation" data-placement="right" class="icon-reorder tooltips"></div>
+            </div>
+            <!--logo start-->
+            <a href="/Member/Index" class="logo">Cine<span>FLEX</span></a> 
+            <!--logo end-->
+            <div class="nav notify-row" id="top_menu">
+                <!--  notification start -->
+                <ul class="nav top-menu">
+                    <!-- settings start -->
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <i class="icon-tasks"></i>
+                            <span class="badge bg-success">1</span>
+                        </a>
+                        <ul class="dropdown-menu extended tasks-bar">
+                            <li>
+                                <a href="#">
+                                    <div class="task-info">
+                                        <div class="desc">Günlük İşlerin Tamamlanma Yüzdesi</div>
+                                        <div class="percent">45%</div>
+                                    </div>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
+                                            <span class="sr-only">45% Tamamlandı</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                    <!-- settings end -->
+                    <!-- inbox dropdown start-->
+                    <li id="header_inbox_bar" class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <i class="icon-envelope-alt"></i>
+                            <span class="badge bg-important">0</span>
+                        </a>
+                        <ul class="dropdown-menu extended inbox">
+                            <div class="notify-arrow notify-arrow-red">
+                                <li>
+                                    <p class="red">Mesaj Kutunuz Boş</p>
+                                </li>
+                            </div>
+
+                        </ul>
+                    
+                    <!-- inbox dropdown end -->
+                    <!-- notification dropdown start-->
+                    <li id="header_notification_bar" class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <i class="icon-bell-alt"></i>
+                            <span class="badge bg-warning">1</span>
+                        </a>
+                        <ul class="dropdown-menu extended notification">
+                            <div class="notify-arrow notify-arrow-yellow"></div>
+                            <li>
+                                <p class="yellow">1 Yeni Bildiriminiz Var</p>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="label label-danger"><i class="icon-bolt"></i></span>
+                                    Server #3'te aşırı yüklenme var.
+                                    <span class="small italic">34 mins</span>
+                                </a>
+                            </li>
+                            
+                            <li>
+                                @*<a href="#">Tüm bildirimlere göz atın.</a>*@
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- notification dropdown end -->
+                </ul>
+            </div>
+            <div class="top-nav ">
+                <ul class="nav pull-right top-menu">
+                    
+                    <!-- user login dropdown start-->
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <img alt="" src="img/avatar1_small.jpg">
+                            <span class="username">Devrim Güneş SIVACI</span>
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu extended logout">
+                            <div class="log-arrow-up"></div>
+                            <li><a href="#"><i class=" icon-suitcase"></i>Profile</a></li>
+                            <li><a href="#"><i class="icon-cog"></i> Settings</a></li>
+                            <li><a href="#"><i class="icon-bell-alt"></i> Notification</a></li>
+                            <li><a href="/Home/Login"><i class="icon-key"></i> Log Out</a></li> 
+                        </ul>
+                    </li>
+                    <!-- user login dropdown end -->
+                </ul>
+            </div>
+        </header>
+        <!--header end-->
+        <!--sidebar start-->
+        <aside>
+            <div id="sidebar" class="nav-collapse ">
+                <!-- sidebar menu start-->
+                <ul class="sidebar-menu" id="nav-accordion">
+
+                    <li class="sub-menu">
+                        <a href="javascript:;">
+                            <i class="icon-laptop"></i>
+                            <span>Yönetim Paneli</span>
+                        </a>
+                        <ul class="sub">
+                            <li><a href="~/Admin/Employee/ListEmployee">Çalışanlar Tablosu</a></li>
+                            <li><a href="basic_table.html">Basic Table</a></li>
+                            <li><a href="responsive_table.html">Responsive Table</a></li>
+                            <li><a href="dynamic_table.html">Dynamic Table</a></li>
+                            <li><a href="advanced_table.html">Advanced Table</a></li>
+                            <li><a href="editable_table.html">Editable Table</a></li>
+                            <li><a href="language_switch_bar.html">Language Switch Bar</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="javascript:;">
+                            <i class="icon-th"></i>
+                            <span>Veritabanı Tabloları</span>
+                        </a>
+                        <ul class="sub">
+                            <li><a href="~/Admin/Movie/GenreList">Türler Tablosu</a></li>
+                            <li><a href="~/Admin/RealMovie/MovieList">Filmler Tablosu</a></li>
+                            
+                        </ul>
+                    </li>
+                    
+                    
+
+                    <li>
+                        <a href="~/Admin/Employee/Inbox">
+                            @*buraya zuckergorkem ve steveburaktan mesaj gelebilir.*@
+                            <i class="icon-envelope"></i>
+                            <span>Mail </span>
+                            <span class="label label-danger pull-right mail-info">2</span>
+                        </a>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="javascript:;">
+                            <i class=" icon-bar-chart"></i>
+                            <span>Charts</span>
+                        </a>
+                        <ul class="sub">
+                            <li><a href="morris.html">Morris</a></li>
+                            <li><a href="chartjs.html">Chartjs</a></li>
+                            <li><a href="flot_chart.html">Flot Charts</a></li>
+                            <li><a href="xchart.html">xChart</a></li>
+                        </ul>
+                    </li>
+
+                    
+                    <!--multi level menu start-->
+                    <!--multi level menu end-->
+                </ul>
+                <!-- sidebar menu end-->
+            </div>
+        </aside>
+        <!--sidebar end-->
+        <!--main content start-->
+        <section id="main-content">
+            <section class="wrapper site-min-height">
+                <!-- page start-->
+                @RenderBody()
+                <!-- page end-->
+            </section>
+        </section>
+        <!--main content end-->
+        <!--footer start-->
+        <footer class="site-footer">
+           
+        </footer>
+        <!--footer end-->
+    </section>
+    <!-- js placed at the end of the document so the pages load faster -->
+    <!--<script src="js/jquery.js"></script>-->
+    <script type="text/javascript" language="javascript" src="~/OuterTools/movie_review/assets/advanced-datatable/media/js/jquery.js"></script>
+    <script src="~/OuterTools/movie_review/js/bootstrap.js"></script>
+    <script class="include" type="text/javascript" src="~/OuterTools/movie_review/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="~/OuterTools/movie_review/js/jquery.scrollTo.min.js"></script>
+    <script src="~/OuterTools/movie_review/js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script type="text/javascript" src="~/OuterTools/movie_review/js/jquery.validate.min.js"></script>
+    <script src="~/OuterTools/movie_review/js/form-validation-script.js"></script>
+    <script src="~/OuterTools/movie_review/js/respond.min.js"></script>
+    <script type="text/javascript" language="javascript" src="~/OuterTools/movie_review/assets/advanced-datatable/media/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="~/OuterTools/movie_review/assets/bootstrap-fileupload/bootstrap-fileupload.js"></script>
+    <!--common script for all pages-->
+    <script src="~/OuterTools/movie_review/js/common-scripts.js"></script>
+    @*Alt taraf yorum satırı altına alınmıstır cünkü ayrı sayfalarda kullanılacaktır!*@
+
+
+    @*<script type="text/javascript">
+        /* Formating function for row details */
+        function fnFormatDetails(oTable, nTr) {
+            var aData = oTable.fnGetData(nTr);
+            var sOut = '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">';
+            sOut += '<tr><td>Urun İsmi:</td><td>' + aData[2] + ' | Kategori: ' + aData[5] + '</td></tr>';
+            sOut += '<tr><td>Link to source:</td><td> <a href="/Admin/Product/AddProduct">Urun Ekle</a>    </td></tr>';
+            sOut += '<tr><td>Extra info:</td><td> <a href="/Admin/Product/ProductDetail/' + aData[1] + '">Urun Detayı</a> </td></tr>';
+            sOut += '</table>';
+
+            return sOut;
+        }
+
+        $(document).ready(function () {
+            /*
+             * Insert a 'details' column to the table
+             */
+            var nCloneTh = document.createElement('th');
+            var nCloneTd = document.createElement('td');
+            nCloneTd.innerHTML = '<img class="brb" src="/OuterTools/FlatAdmin/assets/advanced-datatable/examples/examples_support/details_open.png">';
+            nCloneTd.className = "center";
+
+            $('#hidden-table-info thead tr').each(function () {
+                this.insertBefore(nCloneTh, this.childNodes[0]);
+            });
+
+            $('#hidden-table-info tbody tr').each(function () {
+                this.insertBefore(nCloneTd.cloneNode(true), this.childNodes[0]);
+            });
+
+            /*
+             * Initialse DataTables, with no sorting on the 'details' column
+             */
+            var oTable = $('#hidden-table-info').dataTable({
+                "aoColumnDefs": [
+                    { "bSortable": false, "aTargets": [0] }
+                ],
+                "aaSorting": [[1, 'asc']]
+            });
+
+            /* Add event listener for opening and closing details
+             * Note that the indicator for showing which row is open is not controlled by DataTables,
+             * rather it is done here
+             */
+            $('#hidden-table-info tbody td .brb').live('click', function () {
+                var nTr = $(this).parents('tr')[0];
+                if (oTable.fnIsOpen(nTr)) {
+                    /* This row is already open - close it */
+                    this.src = "/OuterTools/FlatAdmin/assets/advanced-datatable/examples/examples_support/details_open.png";
+                    oTable.fnClose(nTr);
+                }
+                else {
+                    /* Open this row */
+                    this.src = "/OuterTools/FlatAdmin/assets/advanced-datatable/examples/examples_support/details_close.png";
+                    oTable.fnOpen(nTr, fnFormatDetails(oTable, nTr), 'details');
+                }
+            });
+        });</script>*@
+
+</body>
+</html>

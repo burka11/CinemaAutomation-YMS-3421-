@@ -1,0 +1,208 @@
+﻿
+@{
+    ViewBag.Title = "Deneme";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
+<script src="~/Scripts/bootstrap.js"></script>
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+<link href="~/Content/themes/base/datepicker.css" rel="stylesheet" />
+<script src="~/Scripts/MdBootstrapPersianDateTimePicker/jquery.Bootstrap-PersianDateTimePicker.js"></script>
+<script src="~/Scripts/jquery-ui-1.12.1.js"></script>
+<script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bootstrap DatePicker</title>
+
+<script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+<link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+<style>
+    #holder {
+        height: 200px;
+        width: 550px;
+        background-color: #ffffff;
+        border: 1px solid #A4A4A4;
+        margin-left: 10px;
+    }
+
+    #place {
+        position: relative;
+        margin: 7px;
+    }
+
+        #place a {
+            font-size: 0.6em;
+        }
+
+        #place li {
+            list-style: none outside none;
+            position: absolute;
+        }
+
+            #place li:hover {
+                background-color: green;
+            }
+
+        #place .seat {
+            background: url('../../Pictures/theatre_seat-512.png') no-repeat scroll 0 0 transparent;
+            height: 33px;
+            width: 33px;
+            display: block;
+        }
+
+        #place .selectedSeat {
+          
+            background-image: url('../../theatre_seat-512.png');
+        }
+
+        #place .selectingSeat {
+            
+            background-image: url('../../theatre_seat-512.png');
+        }
+
+        #place .row-3, #place .row-4 {
+            margin-top: 10px;
+        }
+
+    #seatDescription li {
+        verticle-align: middle;
+        list-style: none outside none;
+        padding-left: 35px;
+        height: 35px;
+        float: left;
+    }
+
+
+    .ui-datepicker-calendar {
+    display: none;
+    }
+</style>
+<h2>Deneme</h2>
+
+<body>
+    <h2> Choose seats by clicking the corresponding seat in the layout below:</h2>
+    <div id="holder">
+        <ul id="place">
+        </ul>
+    </div>
+    <div style="float:left;">
+        <ul id="seatDescription">
+            <li style="background:url('../../theatre_seat-512.png')">Available Seat</li>
+            <li style="background:url('../../theatre_seat-512.png') no-repeat scroll 0 0 transparent;">Booked Seat</li>
+            <li style="background:url('../../theatre_seat-512.png') no-repeat scroll 0 0 transparent;">Selected Seat</li>
+        </ul>
+    </div>
+    <div style="clear:both;width:100%">
+        <input type="button" id="btnShowNew" value="Show Selected Seats" />
+        <input type="button" id="btnShow" value="Show All" />
+    </div>
+    <div style="text-align:center;">
+        <label for="from">From</label>
+        <input type="text" id="from" name="from" readonly="readonly" />
+        <label for="to">to</label>
+        <input type="text" id="to" name="to" readonly="readonly" />
+        <input type="button" id="btnShow" value="Show" />
+    </div>
+</body>
+
+<script>
+    var settings = {
+        rows: 5,
+        cols: 15,
+        rowCssPrefix: 'row-',
+        colCssPrefix: 'col-',
+        seatWidth: 35,
+        seatHeight: 35,
+        seatCss: 'seat',
+        selectedSeatCss: 'selectedSeat',
+        selectingSeatCss: 'selectingSeat'
+    };
+
+    var init = function (reservedSeat) {
+        var str = [], seatNo, className;
+        for (i = 0; i < settings.rows; i++) {
+            for (j = 0; j < settings.cols; j++) {
+                seatNo = (i + j * settings.rows + 1);
+                className = settings.seatCss + ' ' + settings.rowCssPrefix + i.toString() + ' ' + settings.colCssPrefix + j.toString();
+                if ($.isArray(reservedSeat) && $.inArray(seatNo, reservedSeat) != -1) {
+                    className += ' ' + settings.selectedSeatCss;
+                }
+                str.push('<li class="' + className + '"' +
+                    'style="top:' + (i * settings.seatHeight).toString() + 'px;left:' + (j * settings.seatWidth).toString() + 'px">' +
+                    '<a title="' + seatNo + '">' + seatNo + '</a>' +
+                    '</li>');
+            }
+        }
+        $('#place').html(str.join(''));
+    };
+    //case I: Show from starting
+    //init();
+
+    //Case II: If already booked
+    var bookedSeats = [5, 10, 25];
+    init(bookedSeats);
+
+    $('.' + settings.seatCss).click(function () {
+        if ($(this).hasClass(settings.selectedSeatCss)) {
+            alert('This seat is already reserved');
+        }
+        else {
+            $(this).toggleClass(settings.selectingSeatCss);
+        }
+    });
+
+    $('#btnShow').click(function () {
+        var str = [];
+        $.each($('#place li.' + settings.selectedSeatCss + ' a, #place li.' + settings.selectingSeatCss + ' a'), function (index, value) {
+            str.push($(this).attr('title'));
+        });
+        alert(str.join(','));
+    })
+
+    $('#btnShowNew').click(function () {
+        var str = [], item;
+        $.each($('#place li.' + settings.selectingSeatCss + ' a'), function (index, value) {
+            item = $(this).attr('title');
+            str.push(item);
+        });
+        alert(str.join(','));
+    })
+
+    //w
+
+    $( "#from, #to" ).datepicker({ 
+           changeMonth: true,
+           changeYear: true,
+           showButtonPanel: true,
+           dateFormat: 'MM yy',            
+           onClose: function(dateText, inst) { 
+               var month = $("#ui-datepicker-div .ui-datepicker-month :selected").val();
+               var year = $("#ui-datepicker-div .ui-datepicker-year :selected").val();             
+               $(this).datepicker('setDate', new Date(year, month, 1));
+           },
+           beforeShow : function(input, inst) {
+               if ((datestr = $(this).val()).length > 0) {
+                   year = datestr.substring(datestr.length-4, datestr.length);
+                   month = jQuery.inArray(datestr.substring(0, datestr.length-5), $(this).datepicker('option', 'monthNames'));
+                   $(this).datepicker('option', 'defaultDate', new Date(year, month, 1));
+                   $(this).datepicker('setDate', new Date(year, month, 1));    
+               }
+               var other = this.id == "from" ? "#to" : "#from";
+               var option = this.id == "from" ? "maxDate" : "minDate";        
+               if ((selectedDate = $(other).val()).length > 0) {
+                   year = selectedDate.substring(selectedDate.length-4, selectedDate.length);
+                   month = jQuery.inArray(selectedDate.substring(0, selectedDate.length-5), $(this).datepicker('option', 'monthNames'));
+                   $(this).datepicker( "option", option, new Date(year, month, 1));
+               }
+           }
+       });
+       $("#btnShow").click(function(){ 
+       if ($("#from").val().length == 0 || $("#to").val().length == 0){
+           alert('All fields are required');
+       }
+       else{
+           alert('Selected Month Range :'+ $("#from").val() + ' to ' + $("#to").val());
+           }
+       })
+</script>

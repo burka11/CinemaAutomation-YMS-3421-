@@ -1,0 +1,138 @@
+﻿@model AppUser
+
+@{
+    ViewBag.Title = "About";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <head>
+        <title>CineFlex | Hakkımızda</title>
+    </head>
+    <body>
+
+       
+            
+            <main class="main-content">
+                <div class="container">
+                    <div class="page">
+                        <div class="breadcrumbs">
+                            @Html.ActionLink("Ana Sayfa", "Index")
+                            <span>Hakkımızda</span>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <figure><img style="width:400px;height:250px;" src="~/OuterTools/movie_review/images/hakkımızdafoto.png" alt="CineFlex Fotoğrafı"></figure>
+                            </div>
+                            <div class="col-md-8">
+                                <p class="leading"><h1 style="color:red">Kuruluşumuz</h1></p>
+                                <p><h2 style="color:black">CineFlex firması 2003 yılında , teknoloji ve konforu, beklentilerin üzerinde hizmet anlayışı ile birleştirerek, Türkiye’de farklı ve kendine özgü bir sinema deneyimi yaratma felsefesiyle kurulmuştur.</h2> </p>
+                                <p><h2 style="color:black">Sunmuş olduğu hizmet ve teknolojik yenilikler ile 2013 yılında dünyanın en büyük sinema birliği olan UNIC (International Union of Cinemas) tarafından “Uluslararası Yılın Sinema Grubu” ödülüne layık görülen CineFlex, Türkiye'nin en önde gelen sinema firmasıdır.</h2></p>
+                            </div>
+                        </div>
+                       
+                        <div class="row">
+                            <div class="col-md-9">
+                                <h1 style="color:red" class="section-title">Vizyonumuz ve Misyonumuz</h1>
+                                <p><h4 style="color:black">Sektörde öncü olan firmamız, sizlere daha kaliteli ve iyi hizmet verebilmek için uzman ekip ve yenilenen site tasarımıyla karşınıza çıkıyor. Kurulduğu günden bu yana müşteri memnuniyetini ilke edinmiş olan CineFlex, yılların tecrübesini bu sektöre yeni dahil olan kişi/kurumlara aktarmakla kalmayıp, onlara istihdam da sağlıyor.</h4> </p>
+
+                                <p>
+                                    <h3 style="color:red">Misyon:</h3>
+                                    <h4 style="color:black">
+                                        Ulusal sinema eserlerinin yaygın olarak izleyiciye ulaştırılmasını sağlamak ve sanat bilincini yükseltmek yönünde politikalar üreterek, bu amaca hizmet eden projeleri desteklemek, nitelikli eser üretimini teşvik etmek, kültür mirasımızın gelecek kuşaklara aktarılmasını sağlamak ve uluslararası boyutta Türk sinemasının yerini ve rolünü güçlendirmek.
+                                    </h4>
+                                </p>
+
+                                <p>
+                                    <h3 style="color:red">Vizyon:</h3>
+                                    <h4 style="color:black">
+                                        Türk sinema sektörünü dünyada marka değerine sahip bir konuma getirmek ve ülkemizi en önemli sinema üretim merkezlerinden birisi olarak vazgeçilmez noktaya taşımak.
+                                    </h4>
+                                </p>
+                            </div>
+                            
+                        </div> <!-- .row -->
+
+                        <h2 style="background-color:firebrick;color:black" class="section-title">Ekibimiz</h2>
+                        <div class="row">
+
+                            <div class="col-md-3">
+                                <div class="team">
+                                    <figure class="team-image"><img src="~/OuterTools/movie_review/dummy/devrim.png" alt=""></figure>
+                                    <h1 style="color:green" class="team-name">Devrim Güneş Sıvacı</h1>
+                                    <small class="team-title">Co-founder/Patron</small>
+                                    <div class="social-links">
+                                        <a href="" class="facebook"><i class="fa fa-facebook"></i></a>
+                                        <a href="" class="twitter"><i class="fa fa-twitter"></i></a>
+                                        <a href="" class="google-plus"><i class="fa fa-google-plus"></i></a>
+                                        <a href="" class="pinterest"><i class="fa fa-pinterest"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="team">
+                                    <figure class="team-image"><img src="~/OuterTools/movie_review/dummy/steveburak.png" alt=""></figure>
+                                    <h2 style="color:green" class="team-name">Burak YILDIZ</h2>
+                                    <small class="team-title">Kıdemli Yazılım Geliştiricisi</small>
+                                    <div class="social-links">
+                                        <a href="" class="facebook"><i class="fa fa-facebook"></i></a>
+                                        <a href="" class="twitter"><i class="fa fa-twitter"></i></a>
+                                        <a href="" class="google-plus"><i class="fa fa-google-plus"></i></a>
+                                        <a href="" class="pinterest"><i class="fa fa-pinterest"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="team">
+                                    <figure class="team-image"><img src="~/OuterTools/movie_review/dummy/zuckergörkem.png" alt=""></figure>
+                                    <h2 style="color:green" class="team-name">Görkem YURDUPAK</h2>
+                                    <small class="team-title">Kıdemli Yazılım Geliştiricisi</small>
+                                    <div class="social-links">
+                                        <a href="" class="facebook"><i class="fa fa-facebook"></i></a>
+                                        <a href="" class="twitter"><i class="fa fa-twitter"></i></a>
+                                        <a href="" class="google-plus"><i class="fa fa-google-plus"></i></a>
+                                        <a href="" class="pinterest"><i class="fa fa-pinterest"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="team">
+                                    <figure class="team-image"><img src="~/OuterTools/movie_review/dummy/sevimo.png" alt=""></figure>
+                                    <h2 style="color:green" class="team-name">Sevim Objektif</h2>
+                                    <small class="team-title">Sinema Departman Müdürü</small>
+                                    <div class="social-links">
+                                        <a href="" class="facebook"><i class="fa fa-facebook"></i></a>
+                                        <a href="" class="twitter"><i class="fa fa-twitter"></i></a>
+                                        <a href="" class="google-plus"><i class="fa fa-google-plus"></i></a>
+                                        <a href="" class="pinterest"><i class="fa fa-pinterest"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="team">
+                                    <figure class="team-image"><img src="~/OuterTools/movie_review/dummy/aysen.png" alt=""></figure>
+                                    <h2 style="color:green" class="team-name">Ayşen HIZLI</h2>
+                                    <small class="team-title">Gişe Görevlisi</small>
+                                    <div class="social-links">
+                                        <a href="" class="facebook"><i class="fa fa-facebook"></i></a>
+                                        <a href="" class="twitter"><i class="fa fa-twitter"></i></a>
+                                        <a href="" class="google-plus"><i class="fa fa-google-plus"></i></a>
+                                        <a href="" class="pinterest"><i class="fa fa-pinterest"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div> <!-- .container -->
+            </main>
+            
+        
+        <!-- Default snippet for navigation -->
+
+
+
+       
+
+    </body>
+
+   

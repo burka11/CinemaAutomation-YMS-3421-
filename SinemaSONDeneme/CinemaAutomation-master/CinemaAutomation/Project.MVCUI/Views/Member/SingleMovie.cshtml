@@ -1,0 +1,66 @@
+﻿@model Movie
+@{
+    ViewBag.Title = "SingleMovie";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <head>
+        <title>CineFlex | Film Detay</title>
+    </head>
+<body>
+    <div id="site-content">
+        
+        <main class="main-content">
+            <div class="container">
+                <div class="page">
+                    <div class="breadcrumbs">
+                        @Html.ActionLink("Ana Sayfa", "Index")
+                        @Html.ActionLink("Filmler", "Movies")
+                        <span style="color:red">@Model.MovieName</span>
+                    </div>
+
+                    <div class="content">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <figure class="movie-poster"><img style="width:680px;height:480px;" src="@Model.ImagePath" alt="#"></figure>
+                            </div>
+                            <div class="col-md-6">
+                                <h2 style="color:red" class="movie-title">@Model.MovieName</h2>
+                                <div class="movie-summary">
+
+
+                                </div>
+                                <ul class="movie-meta">
+                                    <li>
+                                        <strong style="color:blueviolet">Rating:</strong>
+                                        <div class="star-rating" title="@Model.Rating"><span style="width:80%"><strong class="rating">9.2</strong> out of 10</span></div> <br /> <br />
+                                    </li>
+                                    <li><strong style="color:blueviolet">Süre:</strong> @Model.ScreenTime dakika</li> <br />
+                                    <li><strong style="color:blueviolet">Vizyon Tarihi:</strong> @Model.ShowDate</li> <br />
+                                    <li><strong style="color:blueviolet">Türü:</strong> @Model.MovieGenre.GenreName</li> <br />
+                                    <li><strong style="color:blueviolet">Formatlar: </strong> @Model.Format</li>
+                                </ul>
+
+                                <ul class="starring">
+                                    <li><strong style="color:blueviolet">Yönetmen:</strong> @Model.Director</li>
+
+                                    <li><strong style="color:blueviolet">Oyuncular:</strong>  @Model.Actors</li>
+                                </ul>
+                                <button style="background-color:red;font-size:16px;width:200px;height:50px" type="button" class="btn btn-warning "><a style="color:whitesmoke" href="/Sales/AddToCart/@Model.ID"><p style="font-size:25px;">Bilet Al</p></a></button>
+                                </div>
+                        </div> <!-- .row -->
+                        <div class="entry-content">
+                            <h3 style="color:blueviolet">Özet : </h3>
+                            <h4> <p style="color:black">@Model.MovieSummary</p></h4>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- .container -->
+        </main>
+        
+    </div>
+    <!-- Default snippet for navigation -->
+
+    
+
+</body>
+

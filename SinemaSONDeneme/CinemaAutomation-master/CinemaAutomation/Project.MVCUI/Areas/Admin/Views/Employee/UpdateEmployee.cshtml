@@ -1,0 +1,100 @@
+﻿@model Employee
+@{
+    ViewBag.Title = "UpdateEmployee";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="panel-body">
+    <div class="form">
+
+        @using (Html.BeginForm("UpdateEmployee", "Employee", FormMethod.Post, new { @class = "cmxform form-horizontal tasi-form", enctype = "multipart/form-data" }))
+        {
+
+            @Html.HiddenFor(x => x.ID)
+            <div class="form-group ">
+                <label for="firstname" class="control-label col-lg-2">Kullanıcı Adı</label>
+                <div class="col-lg-6">
+                    @Html.TextBoxFor(x => x.EmpUserName, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group ">
+                <label for="firstname" class="control-label col-lg-2">Şifre</label>
+                <div class="col-lg-6">
+                    @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group ">
+                <label for="firstname" class="control-label col-lg-2">Doğum Günü</label>
+                <div class="col-lg-6">
+                    @Html.TextBoxFor(x => x.BirthDate, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group ">
+                <label for="firstname" class="control-label col-lg-2">İşe Başlangıç Günü</label>
+                <div class="col-lg-6">
+                    @Html.TextBoxFor(x => x.HireDate, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group ">
+                <label for="firstname" class="control-label col-lg-2">Adres</label>
+                <div class="col-lg-6">
+                    @Html.TextBoxFor(x => x.Address, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group ">
+                <label for="firstname" class="control-label col-lg-2">Çalışan İsmi</label>
+                <div class="col-lg-6">
+                    @Html.TextBoxFor(x => x.EmpFirstName, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group ">
+                <label for="firstname" class="control-label col-lg-2">Çalışan Soyismi</label>
+                <div class="col-lg-6">
+                    @Html.TextBoxFor(x => x.EmpLastName, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group ">
+                <label for="firstname" class="control-label col-lg-2">Rütbesi</label>
+                <div class="col-lg-6">
+                    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-lg-2">Afiş Yükle</label>
+                <div class="col-md-9">
+                    <div class="fileupload fileupload-new" data-provides="fileupload">
+                        <div class="fileupload-new thumbnail" style="width: 570px; height: 516px;">
+                            <img src="@Model.Photo" alt="" />
+                        </div>
+                        <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
+                        @if (Model.Photo != "Dosya boş")
+                        {
+                            @Html.CheckBox("resimSil")
+                            <b style="color:red">Resmi Sil?</b>
+                        }
+
+                        <div>
+                            <span class="btn btn-white btn-file">
+                                <span class="fileupload-new"><i class="icon-paper-clip"></i> Fotoğraf Seç</span>
+                                <span class="fileupload-exists"><i class="icon-undo"></i> Değiştir</span>
+                                <input name="resim" type="file" class="default" />
+                            </span>
+                            <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload"><i class="icon-trash"></i> Fotoğrafı Kaldır</a>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-lg-offset-2 col-lg-6">
+                    <button class="btn btn-danger" type="submit">Save</button>
+                    @Html.ActionLink("İptal Et", "ListEmployee", null, new { @class = "btn btn-default" })
+
+                </div>
+            </div>
+        }
+    </div>
+</div>
+

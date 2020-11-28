@@ -1,0 +1,152 @@
+﻿@model List<Movie>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+    <title>CineFlex | Ana Sayfa</title>
+</head>
+<h1 style="color:red">@TempData["message"]</h1>
+<body>
+
+    <div id="site-content">
+        
+        <main class="main-content">
+            <div class="container">
+                <div class="page">
+                    <div class="row">
+                        <div class="col-md-9">
+                            <div class="slider">
+                                <ul class="slides">
+                                    @foreach (Movie item in Model)
+                                    {
+                                        <li class style="width: 100%; margin-right: -100%; display: block; position: relative;      z-index: 1; opacity: 0; float: left;">
+
+                                          <a href="../Member/SingleMovie/@item.ID"><img style="width:870px;height:518px;" draggable="false" alt="Slide 1" src="@item.ImagePath"></a>
+                                        </li>
+                                    
+                                    }
+
+                                </ul>
+                                <ul class="flex-direction-nav">
+                                    <li>
+                                        <a class="flex-prev" href="#"><i class="fa fa-chevron-left"></i></a>
+                                    </li>
+                                    <li>
+                                        <a class="flex-next" href="#"><i class="fa fa-chevron-right"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="row">
+                                <div class="col-sm-6 col-md-12">
+                                    <div class="latest-movie">
+                                        <a href="../Member/SingleMovie/3"><img style="width:270px;height:244px;" src="~/Pictures/HO00003910_637019138600652257_masal-satosu-sihirli-davet.png" alt="Movie 1"></a>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-12">
+                                    <div class="latest-movie">
+                                        <a href="../Member/SingleMovie/2"><img style="width:270px;height:244px;" src="~/Pictures/HO00003925_637025905754306816_45-25-kusursuzcinayet.png" alt="Movie 2"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- .row -->
+                    <div class="row">
+                        <div class="col-sm-6 col-md-3">
+                            <div class="latest-movie">
+                                <a href="../Member/SingleMovie/1"><img style="width:270px;height:244px;" src="~/Pictures/HO00003926_637025905754306816_duzenbazlar-kulubu.png" alt="Movie 3"></a>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <div class="latest-movie">
+                                <a href="../Member/SingleMovie/9"><img style="width:270px;height:244px;" src="~/Pictures/HO00003911_637019138600652257_abigail-sinirlarin-otesinde.png" alt="Movie 4"></a>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <div class="latest-movie">
+                                <a href="../Member/SingleMovie/8"><img style="width:270px;height:244px;" src="~/Pictures/angrybirds2.jpg" alt="Movie 5"></a>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <div class="latest-movie">
+                                <a href="../Member/SingleMovie/7"><img style="width:270px;height:244px;" src="~/Pictures/newyorkta.jpg" alt="Movie 6"></a>
+                            </div>
+                        </div>
+                    </div> <!-- .row -->
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h2 class="section-title">Ağustos Filmleri</h2>
+                            <p>Ağustos'un en çok izlenen filmleri</p>
+                            <ul class="movie-schedule">
+                                <li>
+                                    <div class="date">02/08</div>
+                                    <h2 class="entry-title"><a href="../Member/SingleMovie/4">Hızlı ve Öfkeli : Hobbs and Shaw</a></h2>
+                                </li>
+                                <li>
+                                    <div class="date">02/08</div>
+                                    <h2 class="entry-title"><a href="../Member/SingleMovie/10">Geniş Aile : Komşu Kızı</a></h2>
+                                </li>
+                                <li>
+                                    <div class="date">09/08</div>
+                                    <h2 class="entry-title"><a href="../Member/SingleMovie/11">Siccin 6</a></h2>
+                                </li>
+                                <li>
+                                    <div class="date">09/08</div>
+                                    <h2 class="entry-title"><a href="../Member/SingleMovie/12">Kanlı Efsane</a></h2>
+                                </li>
+                            </ul> <!-- .movie-schedule -->
+                        </div>
+                        <div class="col-md-4">
+                            <h2 class="section-title">Eylül Filmleri</h2>
+                            <p>Eylül'ün en çok izlenen filmleri.</p>
+                            <ul class="movie-schedule">
+                                <li>
+                                    <div class="date">06/09</div>
+                                    <h2 class="entry-title"><a href="../Member/SingleMovie/1">Düzenbazlar Kulübü</a></h2>
+                                </li>
+                                <li>
+                                    <div class="date">06/09</div>
+                                    <h2 class="entry-title"><a href="../Member/SingleMovie/13">Cin-si Bozuk</a></h2>
+                                </li>
+                                <li>
+                                    <div class="date">06/09</div>
+                                    <h2 class="entry-title"><a href="../Member/SingleMovie/14">Kolej Havası</a></h2>
+                                </li>
+                                <li>
+                                    <div class="date">16/12</div>
+                                    <h2 class="entry-title"><a href="../Member/SingleMovie/2">45-25 Kusursuz Cinayet</a></h2>
+                                </li>
+                            </ul> <!-- .movie-schedule -->
+                        </div>
+                        <div class="col-md-4">
+                            <h2 class="section-title">Ekim Filmleri</h2>
+                            <p>Ekim'in en çok beklenen filmleri</p>
+                            <ul class="movie-schedule">
+                                <li>
+                                    <div class="date">04/10</div>
+                                    <h2 class="entry-title"><a href="../Member/SingleMovie/15">Hareket Sekiz</a></h2>
+                                </li>
+                                <li>
+                                    <div class="date">04/10</div>
+                                    <h2 class="entry-title"><a href="../Member/SingleMovie/16">Joker</a></h2>
+                                </li>
+                                
+                                    <div class="date">11/10</div>
+                                    <h2 class="entry-title"><a href="../Member/SingleMovie/17">Aşkı Beklerken</a></h2>
+                                </li>
+                            </ul> <!-- .movie-schedule -->
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- .container -->
+        </main>
+        
+    </div>
+
+    <!-- Default snippet for navigation -->
+    <!-- js placed at the end of the document so the pages load faster -->
+    
+</body>
